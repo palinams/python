@@ -1,0 +1,17 @@
+import math
+
+n = int(input())  #białe kule
+m = int(input())  #czarne kule
+k = int(input())  #wylosowane kule
+if n+m>=k:
+    try:
+        N = (math.factorial(n) / (math.factorial(k) * math.factorial(n - k)))
+    except:
+        N = 0
+    try:
+        M = (math.factorial(m) / (math.factorial(k) * math.factorial(m - k)))
+    except:
+        M = 0
+    print((N + M) / (math.factorial(n + m) / (math.factorial(k) * math.factorial(n + m - k))))
+else:
+    print("There's not enough balls! Try again.")
